@@ -82,7 +82,7 @@
           <span class="wrow__num mono">01</span>
           <span class="wrow__main">
             <span class="wrow__title">AI Denmark Explorer</span>
-            <span class="wrow__desc">Place-discovery platform: RAG pipeline, CrewAI multi-agent system, forecasting models with 97% accuracy</span>
+            <span class="wrow__desc">Place-discovery platform: RAG pipeline, deterministic multi-agent routing, confidence model with 0.71 outcome correlation</span>
           </span>
           <span class="wrow__tags mono">Next.js &middot; FastAPI &middot; CrewAI</span>
           <span class="wrow__arrow" aria-hidden="true">&darr;</span>
@@ -109,7 +109,7 @@
           <span class="wrow__num mono">04</span>
           <span class="wrow__main">
             <span class="wrow__title">Danish Salary &amp; Tax Calculator</span>
-            <span class="wrow__desc">Live Streamlit app for gross/net income, deductions and holiday pay in Denmark</span>
+            <span class="wrow__desc">Live Streamlit app for gross/net income and deductions in Denmark</span>
           </span>
           <span class="wrow__tags mono">Streamlit &middot; Live app</span>
           <span class="wrow__arrow" aria-hidden="true">&#8599;</span>
@@ -154,15 +154,15 @@
           </div>
           <div class="crow reveal">
             <span class="crow__label mono">Approach</span>
-            <p>A full-stack platform: Next.js/React/TypeScript frontend on Vercel, FastAPI backend on Render, and a PostgreSQL/pgvector database. A RAG pipeline (fastembed embeddings, pgvector similarity search) grounds GPT-4o summaries in real Copenhagen places sourced from OpenStreetMap, with live web-search enrichment covering thin or missing listings. A CrewAI multi-agent crew (Place Scout, Conditions Analyst, Concierge), powered by Groq's Llama 3.3 via LiteLLM, plans a real recommendation grounded in live weather, never inventing a fact it can't cite.</p>
+            <p>A full-stack platform: Next.js/React/TypeScript frontend on Vercel, FastAPI backend on Render, and a Neon PostgreSQL/pgvector database. A RAG pipeline (fastembed embeddings, pgvector similarity search) grounds GPT-4o summaries in real Copenhagen places sourced from OpenStreetMap, with a live Nominatim/Serper fallback covering thin or missing listings. A two-agent CrewAI system (OpenAI GPT-4o-mini, GPT-4o) plans a real recommendation grounded in live Open-Meteo weather, using Pydantic/instructor-validated structured intent to deterministically route each request (near, far, sequential, or area) instead of relying on free-form AI tool calls, never inventing a fact it can't cite.</p>
           </div>
           <div class="crow reveal">
             <span class="crow__label mono">Result</span>
-            <p>Trained and evaluated a quality-score prediction model (XGBoost vs. Random Forest vs. neural net, Optuna-tuned, MLflow-tracked), achieving RMSE 8.76 (83% within &plusmn;10 points); extended the same framework to a weather-driven visit-forecasting model that reached 97% within &plusmn;10 points (R&sup2; 0.98).</p>
+            <p>Built and backtested a live XGBoost recommendation-confidence classifier (Optuna-tuned, MLflow-tracked) that combines offline DistilBERT sentiment with real-time semantic signals, reaching a Pearson correlation of r&nbsp;=&nbsp;0.713 with real outcomes, validated with a live A/B test on prompt quality.</p>
           </div>
           <div class="crow reveal">
             <span class="crow__label mono">Stack</span>
-            <p class="mono case__stack">Next.js &middot; React &middot; TypeScript &middot; FastAPI &middot; PostgreSQL/pgvector &middot; RAG &middot; CrewAI &middot; Groq &middot; XGBoost &middot; Optuna &middot; MLflow</p>
+            <p class="mono case__stack">Next.js &middot; React &middot; TypeScript &middot; FastAPI &middot; PostgreSQL/pgvector (Neon) &middot; RAG &middot; CrewAI &middot; GPT-4o &middot; Pydantic &middot; XGBoost &middot; DistilBERT &middot; Optuna &middot; MLflow</p>
           </div>
           <div class="case__cta reveal">
             <a class="btn btn--solid-ivory" href="https://ai-denmark-explorer.vercel.app/" target="_blank" rel="noopener">Open live app &#8599;</a>
@@ -175,7 +175,7 @@
           </a>
           <figcaption class="mono">Fig. 02 - Live application, trip planner</figcaption>
           <div class="case__metrics mono">
-            <span>83% quality accuracy</span><span>97% forecast accuracy</span><span>1,896 places</span>
+            <span>r 0.71 outcome correlation</span><span>1,896 places</span><span>A/B tested prompts</span>
           </div>
         </figure>
       </div>
@@ -304,7 +304,7 @@
         <div class="skill reveal">
           <span class="skill__label mono">Programming &amp; data</span>
           <p class="skill__desc">Python and SQL for everything from cleaning to feature engineering.</p>
-          <p class="skill__chips mono">Python &middot; Pandas &middot; NumPy &middot; SQL &middot; Git/GitHub &middot; Feature engineering &middot; FastAPI &middot; REST API design &middot; PostgreSQL/pgvector</p>
+          <p class="skill__chips mono">Python &middot; Pandas &middot; NumPy &middot; SQL &middot; Git/GitHub &middot; Feature engineering &middot; FastAPI &middot; REST API design &middot; PostgreSQL/pgvector (Neon)</p>
         </div>
         <div class="skill reveal">
           <span class="skill__label mono">Frontend</span>
@@ -314,7 +314,7 @@
         <div class="skill reveal">
           <span class="skill__label mono">Machine learning &amp; AI</span>
           <p class="skill__desc">Classical ML, forecasting, and LLM workflows that reach production.</p>
-          <p class="skill__chips mono">Scikit-learn &middot; XGBoost &middot; Random Forest &middot; Time-series &middot; A/B testing &middot; NLP &middot; RAG &middot; Semantic search/embeddings &middot; sentence-transformers &middot; LangChain &middot; Ollama &middot; Groq &middot; Prompting &middot; CrewAI &middot; Agentic systems &middot; MLflow &middot; Optuna &middot; PyTorch &middot; TensorFlow &middot; Docker</p>
+          <p class="skill__chips mono">Scikit-learn &middot; XGBoost &middot; Random Forest &middot; Time-series &middot; A/B testing &middot; NLP &middot; RAG &middot; Semantic search/embeddings &middot; sentence-transformers &middot; fastembed &middot; Hugging Face Transformers &middot; DistilBERT &middot; LangChain &middot; Ollama &middot; Groq &middot; OpenAI API &middot; Prompting &middot; Structured output (Pydantic/instructor) &middot; CrewAI &middot; Agentic systems &middot; MLflow &middot; Optuna &middot; PyTorch &middot; TensorFlow &middot; Docker</p>
         </div>
         <div class="skill reveal">
           <span class="skill__label mono">Visualisation &amp; reporting</span>
@@ -324,7 +324,7 @@
         <div class="skill reveal">
           <span class="skill__label mono">Collection &amp; automation</span>
           <p class="skill__desc">Scrapers and CI that keep datasets alive without me touching them.</p>
-          <p class="skill__chips mono">Requests &middot; BeautifulSoup &middot; Playwright &middot; trafilatura &middot; GitHub Actions &middot; Render deployment</p>
+          <p class="skill__chips mono">Requests &middot; BeautifulSoup &middot; Playwright &middot; trafilatura &middot; Nominatim &middot; Serper API &middot; pytest &middot; ruff &middot; GitHub Actions &middot; Render deployment</p>
         </div>
       </div>
     </div>
